@@ -1,6 +1,6 @@
 # ReCapProject: Araba Kiralama Sistemi
 
-Bu proje bir Araba Kiralama Sistemi. Her hafta yeni güncellemeler ekleyerek hem kurumsal mimariye uygun hem SOLID prensiplerine uygun hemde kendimizi tekrar etmeyeğimiz şekilde yazılmaya çalışılmaktadır. Olabildiğince kampa göre hareket edip buna uygun bir dökümantasyon yapmaktayım. Özellikle benim gibi bu projeyle uğraşan arkadaşlara bu projeyi ilerletirken bu kısımları şu şekilde oluşturdum diyebilmek, sizlerde fikir oluşturmak ve anlamadığınız ya da eksik kaldığınız yerlerde destek olmaya çalışmak.
+Bu proje bir Araba Kiralama Sistemi. Her hafta yeni güncellemeler ekleyerek hem kurumsal mimariye uygun hem SOLID prensiplerine uygun hemde kendimizi tekrar etmeyeğimiz şekilde yazılmaya çalışılmaktadır. Olabildiğince kampa göre hareket edip buna uygun bir dökümantasyon yapmaktayım. Özellikle benim gibi bu projeyle uğraşan arkadaşlara bu projeyi ilerletirken bu kısımları şu şekilde oluşturdum diyebilmek, sizlerde fikir oluşturmak, anlamadığınız ya da eksik kaldığınız yerlerde destek olmaya çalışmak ve kendimi geliştirmek.
 
 ![Screenshot_7](https://user-images.githubusercontent.com/59045890/107124581-cf3a3600-68b5-11eb-9aea-48b6d4ba747c.png)
 
