@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ReCap.Core\ReCap.Core.csproj" />
     <ProjectReference Include="..\ReCap.Entities\ReCap.Entities.csproj" />
   </ItemGroup>
 

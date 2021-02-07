@@ -1,11 +1,10 @@
-﻿using ReCap.Entities.Abstract;
-using ReCap.Entities.Concrete;
+﻿using ReCap.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace ReCap.DataAccess.Abstract
+namespace ReCap.Core.DataAccess
 {
     public interface IEntityRepository<T> where T: class, IEntity,new()
     {

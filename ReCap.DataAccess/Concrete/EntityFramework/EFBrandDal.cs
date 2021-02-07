@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ReCap.Core.DataAccess.EntityFramework;
 using ReCap.DataAccess.Abstract;
 using ReCap.Entities.Concrete;
 using System;
@@ -9,54 +10,8 @@ using System.Text;
 
 namespace ReCap.DataAccess.Concrete.EntityFramework
 {
-    public class EFBrandDal : IBrandDal
+    public class EFBrandDal : EFEntityRepositoryBase<Brand, ReCapDBContext>,IBrandDal
     {
-        public void Add(Brand entity)
-        {
-            using (ReCapDBContext context = new ReCapDBContext())
-            {
-                var addedEntity = context.Entry(entity);
-                addedEntity.State = EntityState.Added;
-                context.SaveChanges();
-            }
-        }
-
-        public void Delete(Brand entity)
-        {
-            using (ReCapDBContext context = new ReCapDBContext())
-            {
-                var deletedEntity = context.Entry(entity);
-                deletedEntity.State = EntityState.Deleted;
-                context.SaveChanges();
-            }
-        }
-
-        public Brand Get(Expression<Func<Brand, bool>> filter)
-        {
-            using (ReCapDBContext context = new ReCapDBContext())
-            {
-                return context.Set<Brand>().SingleOrDefault(filter);
-            }
-        }
-
-        public List<Brand> GetAll(Expression<Func<Brand, bool>> filter = null)
-        {
-            using (ReCapDBContext context = new ReCapDBContext())
-            {
-                return filter == null
-                    ? context.Set<Brand>().ToList()
-                    : context.Set<Brand>().Where(filter).ToList();
-            }
-        }
-
-        public void Update(Brand entity)
-        {
-            using (ReCapDBContext context = new ReCapDBContext())
-            {
-                var updatedEntity = context.Entry(entity);
-                updatedEntity.State = EntityState.Added;
-                context.SaveChanges();
-            }
-        }
+       
     }
 }
