@@ -15,9 +15,11 @@ namespace ReCap.ConsoleApp
             BrandManager brandManager = new BrandManager(new EFBrandDal());
             ColorManager colorManager = new ColorManager(new EFColorDal());
 
-            foreach (var car in carManager.GetAll())
+            foreach (var car in carManager.GetCarDetails())
             {
-                Console.WriteLine(car.Descriptions);
+                Console.WriteLine("Rengi: " + car.ColorName + " \nMarkası: " + car.BrandName + 
+                                " \nAraba Hakkında:" + car.CarName + " \nGünlük Ücreti: " + car.DailyPrice);
+                Console.WriteLine("---------------------");
             }
 
         }
