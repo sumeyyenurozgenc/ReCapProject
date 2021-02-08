@@ -27,20 +27,20 @@ Burada her yapılan değişiklik Bölüm 1, Bölüm 2 vb. tarzında olacaktır v
 	Araba günlük fiyatı 0'dan büyük olmalıdır.
 	
 
-#### Solution Explorer penceresinde;
+### Solution Explorer penceresinde;
 
 ![Screenshot_7](https://user-images.githubusercontent.com/59045890/107124581-cf3a3600-68b5-11eb-9aea-48b6d4ba747c.png)
 
-### KIRMIZI kutucuk içindekiler bizim Katmanlarımız: 
+#### KIRMIZI kutucuk içindekiler bizim Katmanlarımız: 
 ReCap.Business, ReCap.ConsoleApp(Şuanlık UI yerine kullanılıyor), ReCap.DataAccess, ReCap.Entities
 
-### Sarı kutucuk içindekiler bizim Abstract klasörümüz: 
+#### Sarı kutucuk içindekiler bizim Abstract klasörümüz: 
 Interface'lerin yer aldığı kısım
 
-### Mor kutucuk içindekiler bizim Concrete klasörümüz: 
+#### Mor kutucuk içindekiler bizim Concrete klasörümüz: 
 Abstract(Soyut) klasörü içerisinde yer alan Interfaceleri Concrete'te implemente ettiğimiz kısım. Örneğin; Interface'lerdeki metotların imzalarına göre dahil ettiğimiz bu metotları doldurduğumuz kısımlar.
 
-### Turkuaz kutucuk içindeki bizim Console(şuanlık UI) olarak kullandığımız kısım:
+#### Turkuaz kutucuk içindeki bizim Console(şuanlık UI) olarak kullandığımız kısım:
 Bir sınıfın yeni bir instance(örnek)'ını oluşturup (
 
 	CarManager carManager = new CarManager();
@@ -57,14 +57,14 @@ Bir sınıfın yeni bir instance(örnek)'ını oluşturup (
 
 ) ve bir sürü yeni kodlar yazacağımız kısım.
 
-#### SQL Server Object Explorer penceresinde;
+### SQL Server Object Explorer penceresinde;
 
 ![Screenshot_8](https://user-images.githubusercontent.com/59045890/107124973-ee39c780-68b7-11eb-8271-c27a983d05d7.png)
 
-### Koyu Pembe:
+#### Koyu Pembe:
 Database Adı: ReCapDB
 
-### Açık Pembe:
+#### Açık Pembe:
 ReCapDB'de yer alan tablolarımız: Cars, Brands, Color
 
 
@@ -75,9 +75,9 @@ ReCapDB'de yer alan tablolarımız: Cars, Brands, Color
 ![Screenshot_6](https://user-images.githubusercontent.com/59045890/107125056-918adc80-68b8-11eb-897c-b657f92b833b.png)
 
 
-### SQL kodlarını direkt kullanmak isterseniz;
+#### SQL kodlarını direkt kullanmak isterseniz;
 
-### -Tablo eklemek için;
+#### -Tablo eklemek için;
 	CREATE TABLE Colors(
 
 	    Id int PRIMARY KEY IDENTITY(1,1),
@@ -112,7 +112,7 @@ ReCapDB'de yer alan tablolarımız: Cars, Brands, Color
 	    FOREIGN KEY (BrandId) REFERENCES Brands(Id)
 	)
 
-### -Tablolara veriler eklemek için;
+#### -Tablolara veriler eklemek için;
 
 	INSERT INTO Cars(BrandId,ColorId,ModelYear,DailyPrice,Descriptions) VALUES
 	
