@@ -9,6 +9,21 @@ namespace ReCap.ConsoleApp
     {
         static void Main(string[] args)
         {
+            //Bolum1();
+
+            CarManager carManager = new CarManager(new EFCarDal());
+            BrandManager brandManager = new BrandManager(new EFBrandDal());
+            ColorManager colorManager = new ColorManager(new EFColorDal());
+
+            foreach (var car in carManager.GetAll())
+            {
+                Console.WriteLine(car.Descriptions);
+            }
+
+        }
+
+        private static void Bolum1()
+        {
             CarManager carManager = new CarManager(new EFCarDal());
             BrandManager brandManager = new BrandManager(new EFBrandDal());
             ColorManager colorManager = new ColorManager(new EFColorDal());

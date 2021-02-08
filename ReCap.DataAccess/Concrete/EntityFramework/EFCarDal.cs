@@ -2,6 +2,7 @@
 using ReCap.Core.DataAccess.EntityFramework;
 using ReCap.DataAccess.Abstract;
 using ReCap.Entities.Concrete;
+using ReCap.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,9 @@ namespace ReCap.DataAccess.Concrete.EntityFramework
 {
     public class EFCarDal : EFEntityRepositoryBase<Car, ReCapDBContext>, ICarDal
     {
-      
+        public List<CarDetailDto> GetCarDetails()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
