@@ -1,10 +1,37 @@
 # ReCapProject: Araba Kiralama Sistemi
 
-Bu proje bir Araba Kiralama Sistemi. Her hafta yeni güncellemeler ekleyerek hem kurumsal mimariye uygun hem SOLID prensiplerine uygun hemde kendimizi tekrar etmeyeğimiz şekilde yazılmaya çalışılmaktadır. Olabildiğince kampa göre hareket edip buna uygun bir dökümantasyon yapmaktayım. Özellikle benim gibi bu projeyle uğraşan arkadaşlara bu projeyi ilerletirken bu kısımları şu şekilde oluşturdum diyebilmek, sizlerde fikir oluşturmak, anlamadığınız ya da eksik kaldığınız yerlerde destek olmaya çalışmak ve kendimi geliştirmek.
+Bu proje bir Araba Kiralama Sistemi hakkında. Her hafta yeni güncellemeler ekleyerek hem kurumsal mimariye uygun hem SOLID prensiplerine uygun hemde kendimizi tekrar etmeyeğimiz şekilde yazılmaya çalışılmaktadır. Olabildiğince kampa göre hareket edip buna uygun bir dökümantasyon yapmaktayım. Özellikle benim gibi bu projeyle uğraşan arkadaşlara bu projeyi ilerletirken bu kısımları şu şekilde oluşturdum diyebilmek, sizlerde fikir oluşturmak, anlamadığınız ya da eksik kaldığınız yerlerde destek olmaya çalışmak ve kendimi geliştirmek...
 
-![Screenshot_7](https://user-images.githubusercontent.com/59045890/107124581-cf3a3600-68b5-11eb-9aea-48b6d4ba747c.png)
+Burada her yapılan değişiklik Bölüm 1, Bölüm 2 vb. tarzında olacaktır ve yapılan değişiklikler başta yer alacaktır.
+
+## BÖLÜM 1
+
+1) Brand ve Color nesneleri ekleyiniz(Entity)
+
+	Brand-->Id,Name
+
+	Color-->Id,Name
+
+2) Sql Server tarafında yeni bir veritabanı kurunuz. Cars,Brands,Colors tablolarını oluşturunuz. (Araştırma)
+
+3) Sisteme Generic IEntityRepository altyapısı yazınız.
+
+4) Car, Brand ve Color nesneleri için Entity Framework altyapısını yazınız.
+
+5) GetCarsByBrandId , GetCarsByColorId servislerini yazınız.
+
+6) Sisteme yeni araba eklendiğinde aşağıdaki kuralları çalıştırınız.
+
+	Araba ismi minimum 2 karakter olmalıdır
+
+	Araba günlük fiyatı 0'dan büyük olmalıdır.
+	
 
 #### Solution Explorer penceresinde;
+
+![Screenshot_7](https://user-images.githubusercontent.com/59045890/107124581-cf3a3600-68b5-11eb-9aea-48b6d4ba747c.png)
+![Screenshot_7](https://user-images.githubusercontent.com/59045890/107124581-cf3a3600-68b5-11eb-9aea-48b6d4ba747c.png)
+
 
 ### KIRMIZI kutucuk içindekiler bizim Katmanlarımız: 
 ReCap.Business, ReCap.ConsoleApp(Şuanlık UI yerine kullanılıyor), ReCap.DataAccess, ReCap.Entities
@@ -32,8 +59,10 @@ Bir sınıfın yeni bir instance(örnek)'ını oluşturup (
 
 ) ve bir sürü yeni kodlar yazacağımız kısım.
 
-![Screenshot_8](https://user-images.githubusercontent.com/59045890/107124973-ee39c780-68b7-11eb-8271-c27a983d05d7.png)
 #### SQL Server Object Explorer penceresinde;
+
+![Screenshot_8](https://user-images.githubusercontent.com/59045890/107124973-ee39c780-68b7-11eb-8271-c27a983d05d7.png)
+![Screenshot_8](https://user-images.githubusercontent.com/59045890/107124973-ee39c780-68b7-11eb-8271-c27a983d05d7.png)
 
 ### Koyu Pembe:
 Database Adı: ReCapDB
