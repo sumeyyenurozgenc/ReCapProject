@@ -142,3 +142,29 @@ ReCapDB'de yer alan tablolarımız: Cars, Brands, Color
 4. Console'da Tüm CRUD operasyonlarınızı Car, Brand, Model nesneleriniz için test ediniz. GetAll, GetById, Insert, Update, Delete.
 
 5. Arabaları şu bilgiler olacak şekilde listeleyiniz. CarName, BrandName, ColorName, DailyPrice. (İpucu : IDto oluşturup 3 tabloya join yazınız)
+
+
+Bu bölümde Code Refactoring yaptık. CRUD işlemleri her veritabanında ortak olduğu için bunu Core katmanına aldık. Böylece Core katmanımızda tüm projelerde yer alması gereken temel şeyler yer alacak.
+
+Çoğu kısmı dersi izleyipte çoğu kişi yapmıştır lakin DTO(Data Transfer Object) kısmında veritabanına bizim belirlediğimiz tablolardan belirlediğimiz alanları tek bir yerden getirme ile ilgili olan kısım biraz kafa karıştırıcı. Bu yüzden de burada bunu açıklamaya çalışacağım.
+
+#### 5. şartta bize CarName, BrandName, ColorName, DailyPrice getirmemizi istiyor fakat BrandName Brand tablosunda, ColorName Color tablosunda ve biz bunu Car tablosundan çağırmak istediğimizde sadece ColorId ve BrandId'ye erişebiliyoruz.
+
+#### Bu engeli aşmak için de  tabiki bir çözüm var. 
+
+### İlk önce neden kendi tablomuzu yapmayı düşünmeyelim?
+Yani DTO kısmı aslında benim yukarıda dediğim "bizim belirlediğimiz tablolardan(birbirlerine ait ID'ler yer alan) belirlediğimiz alanları tek bir yerden getirme kısmını yapmamıza izin verir" kısmı yapmaya olanak verir.
+
+Aşağıdaki resimde hangi alanları istiyorsam yazdım. 
+
+### Not: Bu bir Car sınıfına özgü birşey ve içerisinde BrandId, ColorId yer aldığı için benim geri kalan tüm işlemlerimi Car'a ait yerlerde EFCarDal, ICarService ve CarManager'da yapmam lazım.
+
+![Screenshot_11](https://user-images.githubusercontent.com/59045890/107271469-537aed80-6a5d-11eb-8ddb-2c0abf6f0421.png)
+
+Resimde görüldüğü üzere EFCarDal içerisinde Car, Color, Brand tablolarını birleştirip hangi alanları istiyorsam o alanları yer aldığı tablodan çektim.
+
+![Screenshot_10](https://user-images.githubusercontent.com/59045890/107269948-61c80a00-6a5b-11eb-9c2a-b623dbd853ce.png)
+
+Ve Program.cs'de foreach ile çağırıp çalıştırdığımda resimdeki gibi bilgileri elde etmekteyim.
+
+![Screenshot_9](https://user-images.githubusercontent.com/59045890/107269946-612f7380-6a5b-11eb-8963-cbcde70fb641.png)
