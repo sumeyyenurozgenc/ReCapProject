@@ -30,8 +30,6 @@ Burada her yapılan değişiklik Bölüm 1, Bölüm 2 vb. tarzında olacaktır v
 #### Solution Explorer penceresinde;
 
 ![Screenshot_7](https://user-images.githubusercontent.com/59045890/107124581-cf3a3600-68b5-11eb-9aea-48b6d4ba747c.png)
-![Screenshot_7](https://user-images.githubusercontent.com/59045890/107124581-cf3a3600-68b5-11eb-9aea-48b6d4ba747c.png)
-
 
 ### KIRMIZI kutucuk içindekiler bizim Katmanlarımız: 
 ReCap.Business, ReCap.ConsoleApp(Şuanlık UI yerine kullanılıyor), ReCap.DataAccess, ReCap.Entities
@@ -61,7 +59,6 @@ Bir sınıfın yeni bir instance(örnek)'ını oluşturup (
 
 #### SQL Server Object Explorer penceresinde;
 
-![Screenshot_8](https://user-images.githubusercontent.com/59045890/107124973-ee39c780-68b7-11eb-8271-c27a983d05d7.png)
 ![Screenshot_8](https://user-images.githubusercontent.com/59045890/107124973-ee39c780-68b7-11eb-8271-c27a983d05d7.png)
 
 ### Koyu Pembe:
@@ -132,3 +129,16 @@ ReCapDB'de yer alan tablolarımız: Cars, Brands, Color
 	INSERT INTO Colors(ColorName) VALUES('Beyaz'),('Siyah'),('Kırmızı'),('Mavi');
 
 	INSERT INTO Brands(BrandName) VALUES ('Honda'),('Mercedes'),('BMW'),('Renault');
+	
+	
+## BÖLÜM 2
+
+1. CarRental Projenizde Core katmanı oluşturunuz.
+
+2. IEntity, IDto, IEntityRepository, EfEntityRepositoryBase dosyalarınızı 9. gün dersindeki gibi oluşturup ekleyiniz.
+
+3. Car, Brand, Color sınıflarınız için tüm CRUD operasyonlarını hazır hale getiriniz.
+
+4. Console'da Tüm CRUD operasyonlarınızı Car, Brand, Model nesneleriniz için test ediniz. GetAll, GetById, Insert, Update, Delete.
+
+5. Arabaları şu bilgiler olacak şekilde listeleyiniz. CarName, BrandName, ColorName, DailyPrice. (İpucu : IDto oluşturup 3 tabloya join yazınız)
