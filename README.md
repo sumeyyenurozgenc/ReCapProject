@@ -168,3 +168,8 @@ Resimde görüldüğü üzere EFCarDal içerisinde Car, Color, Brand tabloların
 Ve Program.cs'de foreach ile çağırıp çalıştırdığımda resimdeki gibi bilgileri elde etmekteyim.
 
 ![Screenshot_9](https://user-images.githubusercontent.com/59045890/107269946-612f7380-6a5b-11eb-8963-cbcde70fb641.png)
+
+Evet arkadaşlar Color, Brand, Car için tüm CRUD işlemleri Program.cs'de yapıldı ve hepsini kendiye alakalı #region'ların içine koydum. "+" olan yere tıkladığınızda BrandCRUDOperation, ColorCRUDOperation, CarCRUDOperation ve DTOUsing'in içeriğini görebilirsiniz.
+
+![Screenshot_12](https://user-images.githubusercontent.com/59045890/107414163-aec2e380-6b22-11eb-8c25-40c610b94af6.png)
+
