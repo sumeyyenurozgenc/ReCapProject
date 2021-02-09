@@ -131,7 +131,7 @@ ReCapDB'de yer alan tablolarımız: Cars, Brands, Color
 	INSERT INTO Brands(BrandName) VALUES ('Honda'),('Mercedes'),('BMW'),('Renault');
 	
 	
-## BÖLÜM 2
+## BÖLÜM 2 - Code Refactoring
 
 1. CarRental Projenizde Core katmanı oluşturunuz.
 
