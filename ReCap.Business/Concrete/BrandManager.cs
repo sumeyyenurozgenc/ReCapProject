@@ -17,7 +17,7 @@ namespace ReCap.Business.Concrete
 
         public void Add(Brand brand)
         {
-            if(brand.BrandName.Length>=2)
+            if (brand.BrandName.Length >= 2)
             {
                 _brandDal.Add(brand);
                 Console.WriteLine("Araba marka adı başarıyla eklendi.");
@@ -47,8 +47,14 @@ namespace ReCap.Business.Concrete
 
         public void Update(Brand brand)
         {
-            _brandDal.Update(brand);
-            Console.WriteLine("Araba Marka adı güncellendi.");
+            Brand brand1 = new Brand();
+            brand1.Id = brand.Id;
+            brand1.BrandName = brand.BrandName;
+            if (brand.Id == brand1.Id)
+            {
+                _brandDal.Update(brand1);
+                Console.WriteLine("Araba Marka adı güncellendi.");
+            }
         }
     }
 }
