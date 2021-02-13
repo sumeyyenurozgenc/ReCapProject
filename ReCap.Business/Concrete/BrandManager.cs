@@ -1,4 +1,6 @@
 ﻿using ReCap.Business.Abstract;
+using ReCap.Business.Constants;
+using ReCap.Core.Utilities.Result;
 using ReCap.DataAccess.Abstract;
 using ReCap.Entities.Concrete;
 using System;
@@ -15,46 +17,39 @@ namespace ReCap.Business.Concrete
             _brandDal = brandDal;
         }
 
-        public void Add(Brand brand)
+        public IResult Add(Brand brand)
         {
             if (brand.BrandName.Length >= 2)
             {
                 _brandDal.Add(brand);
-                Console.WriteLine("Araba marka adı başarıyla eklendi.");
+                return new ErrorResult(Messages.SuccessAdd);
             }
             else
             {
-                Console.WriteLine("Araba adı minimum 2 karakter olmalı.");
+                return new ErrorResult(Messages.BrandNameInvalid);
             }
         }
 
-        public void Delete(Brand brand)
+        public IResult Delete(Brand brand)
         {
             _brandDal.Delete(brand);
-            Console.WriteLine("Araba Marka adı silindi.");
+            return new SuccessResult(Messages.SuccessDelete);
         }
 
-        public List<Brand> GetAll()
+        public IDataResult<List<Brand>> GetAll()
         {
-            Console.WriteLine("Tüm araba markaları:");
-            return _brandDal.GetAll();
+            return new SuccessDataResult<List<Brand>>(_brandDal.GetAll(), Messages.SuccessListed);
         }
 
-        public Brand GetById(int id)
+        public IDataResult<Brand> GetById(int id)
         {
-            return _brandDal.Get(x => x.Id == id);
+            return new SuccessDataResult<Brand>(_brandDal.Get(x => x.Id == id));
         }
 
-        public void Update(Brand brand)
+        public IResult Update(Brand brand)
         {
-            Brand brand1 = new Brand();
-            brand1.Id = brand.Id;
-            brand1.BrandName = brand.BrandName;
-            if (brand.Id == brand1.Id)
-            {
-                _brandDal.Update(brand1);
-                Console.WriteLine("Araba Marka adı güncellendi.");
-            }
+            _brandDal.Update(brand);
+            return new SuccessResult(Messages.SuccessUpdate);
         }
     }
 }
