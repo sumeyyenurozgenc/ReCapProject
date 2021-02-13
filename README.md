@@ -229,5 +229,11 @@ SQL Server Object Explorer ReCapDB'mde User, Customer, Rental tablolarını ekle
 	    FOREIGN KEY (CarId) REFERENCES Cars(Id),
 	    FOREIGN KEY (CustomerId) REFERENCES Customers(Id)
 	)
-	
+
+Sonuç resimdeki gibidir --> 
 ![Screenshot_13](https://user-images.githubusercontent.com/59045890/107851613-62c2b800-6e1c-11eb-9502-d06c3f86c294.png)
+
+#### Sakın ama sakın ReCapDBContext'in içine bu tabloları eklemeyi unutmayın!
+Çünkü bu tabloların **Entities** (User, Customer, Rental), **DataAccess** (IUserDal, ICustomerDal, IRentalDal, EFUserDal, EFCustomerDal, EFRentalDal), **Business** (IUserService, ICustomerService, IRentalService, UserManager, CustomerManager, RentalManager) katmanları çalışır vaziyette olur. Ama Program.cs'de Managerların->Add metotlarını çağırmak isteyinde o tablolar **SET** edilmediği için tabloları bulamaz ve hata verir! (Tecrübeyle kanıtlanmıştır 😁)
+
+![Screenshot_2](https://user-images.githubusercontent.com/59045890/107851692-dd8bd300-6e1c-11eb-963c-bf91b1f5f6bd.png)
