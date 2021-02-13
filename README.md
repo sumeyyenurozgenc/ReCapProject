@@ -237,3 +237,10 @@ Sonuç resimdeki gibidir -->
 Çünkü bu tabloların **Entities** (User, Customer, Rental), **DataAccess** (IUserDal, ICustomerDal, IRentalDal, EFUserDal, EFCustomerDal, EFRentalDal), **Business** (IUserService, ICustomerService, IRentalService, UserManager, CustomerManager, RentalManager) katmanları çalışır vaziyette olur. Ama Program.cs'de Managerların->Add metotlarını çağırmak isteyinde o tablolar **SET** edilmediği için tabloları bulamaz ve hata verir! (Tecrübeyle kanıtlanmıştır 😁)
 
 ![Screenshot_2](https://user-images.githubusercontent.com/59045890/107851692-dd8bd300-6e1c-11eb-963c-bf91b1f5f6bd.png)
+
+
+#### Resimde görüldüğü üzere biz Data Field'ını GET özelliği verdik sadece yani ReadOnly'dir ama biz Constructor'da Data'ya dışarıdan bir veriyi SET ettik. Nasıl böyle birşey olabilir?
+
+![Screenshot_3](https://user-images.githubusercontent.com/59045890/107858714-bea23680-6e46-11eb-9e47-bbcfe6020293.png)
+
+### Bunun cevabı: Getter'lar(resimde get olarak tanımladığımız yer) ReadOnly'dir ve sadece Constructor'da Set edebilirsin!!! Yani Constructor dışında Set etme yapamazsın eğer bir Field'a set özelliği vermediysen!
