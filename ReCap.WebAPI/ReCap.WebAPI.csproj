@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NSwag.AspNetCore" Version="13.10.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReCap.Business\ReCap.Business.csproj" />
+    <ProjectReference Include="..\ReCap.ConsoleApp\ReCap.ConsoleApp.csproj" />
+    <ProjectReference Include="..\ReCap.Core\ReCap.Core.csproj" />
+    <ProjectReference Include="..\ReCap.DataAccess\ReCap.DataAccess.csproj" />
+    <ProjectReference Include="..\ReCap.Entities\ReCap.Entities.csproj" />
+  </ItemGroup>
+
+
+</Project>
