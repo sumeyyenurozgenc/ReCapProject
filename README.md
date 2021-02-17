@@ -245,6 +245,8 @@ Sonuç resimdeki gibidir -->
 
 ### Bunun cevabı: Getter'lar(resimde get olarak tanımladığımız yer) ReadOnly'dir ve sadece Constructor'da Set edebilirsin!!! Yani Constructor dışında Set etme yapamazsın eğer bir Field'a set özelliği vermediysen!
 
+
+
 ## BÖLÜM 3 - WebAPI Katmanı ekleme ve Swagger Kullanımı - 11. Gün
 
 #### Ödev 1
