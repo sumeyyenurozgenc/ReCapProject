@@ -244,3 +244,53 @@ Sonuç resimdeki gibidir -->
 ![Screenshot_3](https://user-images.githubusercontent.com/59045890/107858714-bea23680-6e46-11eb-9e47-bbcfe6020293.png)
 
 ### Bunun cevabı: Getter'lar(resimde get olarak tanımladığımız yer) ReadOnly'dir ve sadece Constructor'da Set edebilirsin!!! Yani Constructor dışında Set etme yapamazsın eğer bir Field'a set özelliği vermediysen!
+
+## BÖLÜM 3 - WebAPI Katmanı ekleme ve Swagger Kullanımı - 11. Gün
+
+#### Ödev 1
+CarRental projenizde;
+
+1. WebAPI katmanını kurunuz.
+2. Business katmanındaki tüm servislerin Api karşılığını yazınız.
+
+Evet arkadaşlar, ben burada API'lerimi test ederken **Swagger** kullanmayı tercih ettim. Postman'a nazaran kullanımı daha kolay. Çünkü Postman'da her metot için tek tek Controller'a bakıp düzenlemem gerekiyorken Swagger'da WebAPI katmanı altında yer alan tüm Controller'larımı ve onlara ait tüm API'leri hem görmemi hemde tek yerde hepsini denememe imkan veriyor.
+
+### Swagger'ı projemizde kullanmak için;
+1. **WebAPI** projemize gelip mouse sağ click ile **Manage Nuget Packages...** açın.
+2. Browse kısmına NSwag.AspNetCore yazın ve indirin. (Resimdeki gibi)
+
+![Screenshot_4](https://user-images.githubusercontent.com/59045890/108245419-506cb500-7161-11eb-8143-ceea78651e90.png)
+
+3. İndirdikten sonra WebAPI'nin altında Startup.cs'yi açın. Resimdeki gibi sırayla **ConfigureServices** kısmına **services.addSwaggerDocument();** yazın. Sonra da altında yer alan Configure metodunun için sırayla **app.UseOpenAPI(); app.UserSwaggerUi3();** yazın. (Burayla işiniz bitti.)
+
+![Screenshot_12](https://user-images.githubusercontent.com/59045890/108245688-a2add600-7161-11eb-9eb9-56c85c915ada.png)
+
+![Screenshot_6](https://user-images.githubusercontent.com/59045890/108245423-51054b80-7161-11eb-9e19-815be62dfe0a.png)
+
+4. Şimdi Projeyi WebAPI'den başlatın. (WebAPI'ye Set as Startup Project demeyi unutmayın. Çünkü projemizi artık buradan kontrol edicez)
+5. Proje Chrome'da açılınca resimdeki gibi localhost:port numarasının sonuna **/swagger/index.html** eklemeyi unutmayın.
+
+![Screenshot_7](https://user-images.githubusercontent.com/59045890/108245426-51054b80-7161-11eb-8498-99a93d354f33.png)
+
+6. Swagger açılınca karşınızda bizim Controller'larımız ve onlara ait API'leri yer almaktadır.
+
+![Screenshot_8](https://user-images.githubusercontent.com/59045890/108245417-4fd41e80-7161-11eb-817a-c6011a80c4d7.png)
+
+#### Örneğin ben tüm markaları listelemek istersem (Brands/getall) ;
+
+1. **Brands**'in altında yer alan **getall**'a tıklayın içerisinde **Try it out** tıklayın.
+
+![Screenshot_9](https://user-images.githubusercontent.com/59045890/108247432-b3f7e200-7163-11eb-956a-96527c0cacfa.png)
+
+2. **Execute** tuşuna basın.
+
+![Screenshot_10](https://user-images.githubusercontent.com/59045890/108247442-b65a3c00-7163-11eb-83e8-5aac1018db08.png)
+
+3. Ve görüldüğü üzere sonuç karşımızda.
+
+![Screenshot_11](https://user-images.githubusercontent.com/59045890/108247443-b65a3c00-7163-11eb-8f14-df6cb3159f92.png)
+
+### NOT: Burada dönen değer JSON formatıdır!
+
+
+
