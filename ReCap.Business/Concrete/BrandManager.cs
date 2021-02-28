@@ -1,5 +1,9 @@
-﻿using ReCap.Business.Abstract;
+﻿using FluentValidation;
+using ReCap.Business.Abstract;
 using ReCap.Business.Constants;
+using ReCap.Business.ValidationRules.FluentValidation;
+using ReCap.Core.Aspects.Autofac.Validation;
+using ReCap.Core.CrossCuttingConcerns.Validation;
 using ReCap.Core.Utilities.Result;
 using ReCap.DataAccess.Abstract;
 using ReCap.Entities.Concrete;
@@ -17,17 +21,11 @@ namespace ReCap.Business.Concrete
             _brandDal = brandDal;
         }
 
+        [ValidationAspect(typeof(BrandValidator))]
         public IResult Add(Brand brand)
         {
-            if (brand.BrandName.Length >= 2)
-            {
-                _brandDal.Add(brand);
-                return new ErrorResult(Messages.SuccessAdd);
-            }
-            else
-            {
-                return new ErrorResult(Messages.BrandNameInvalid);
-            }
+            _brandDal.Add(brand);
+            return new ErrorResult(Messages.SuccessAdd);
         }
 
         public IResult Delete(Brand brand)

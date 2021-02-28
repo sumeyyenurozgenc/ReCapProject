@@ -1,5 +1,7 @@
 ﻿using ReCap.Business.Abstract;
 using ReCap.Business.Constants;
+using ReCap.Business.ValidationRules.FluentValidation;
+using ReCap.Core.Aspects.Autofac.Validation;
 using ReCap.Core.Utilities.Result;
 using ReCap.DataAccess.Abstract;
 using ReCap.Entities.Concrete;
@@ -17,17 +19,12 @@ namespace ReCap.Business.Concrete
         {
             _carDal = carDal;
         }
+
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {
-            if (car.DailyPrice > 0)
-            {
-                _carDal.Add(car);
-                return new ErrorResult(Messages.SuccessAdd);
-            }
-            else
-            {
-                return new SuccessResult(Messages.ErrorAdd);
-            }
+            _carDal.Add(car);
+            return new ErrorResult(Messages.SuccessAdd);
         }
 
         public IResult Delete(Car car)

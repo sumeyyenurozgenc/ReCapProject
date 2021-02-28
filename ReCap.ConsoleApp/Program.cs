@@ -99,8 +99,8 @@ namespace ReCap.ConsoleApp
             {
                 CarId = 8,
                 CustomerId = 1,
-                RentDate = "27/01/2021",
-                ReturnDate = ""
+                RentDate = Convert.ToDateTime(27/01/2021),
+                ReturnDate = Convert.ToDateTime(29/01/2021)
             };
             rentalManager.Add(addRental);
 
